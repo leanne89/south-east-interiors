@@ -1,0 +1,9 @@
+# Build files
+target/
+
+# Intellij files
+.idea
+
+# Mac DS Store file
+.DS_Store
+
