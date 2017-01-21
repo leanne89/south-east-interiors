@@ -4,27 +4,54 @@ body {
   font-size: 22px;
 }
 
-
-
 .section {
     padding: 40px 0px;
     text-align: left;
 }
 
 h1 {
-    margin: 40px 200px 40px 200px;
+    margin: 4% 5% 4% 10%;
     color: #35a380;
     font-size: 40pt;
     text-align: left;
 }
 
 .content {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 13pt;
     padding-left: 40px;
     border-left: solid 10px #35a380;
     text-align: left;
+}
+
+input {
+    width: 50%;
+}
+
+input.error, textarea.error {
+    font-size: 13pt;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+}
+
+.success {
+    padding: 20px;
+    color: #35a380;
+    font-size: 20pt;
+}
+
+.error {
+    color: #ff3333;
+    padding: 20px;
+    font-size: 20pt;
+}
+
+#result {
+    display: none;
 }
 
 /* ------------ Start of HOMEPAGE Section ------------ */
@@ -39,17 +66,17 @@ h1 {
 }
 
 .homepage-text {
-  padding-top: 40px;
+  padding-top: 1%;
 }
 
 .homepage-content {
-    margin-left: 200px;
+    margin-left: 10%;
     font-size: 18pt;
     font-style: bold;
     text-align: left;
 }
 
-/* ------------ Start of HOMEPAGE Section ------------ */
+/* ------------ End of HOMEPAGE Section ------------ */
 
 /* ------------ Start of ABOUT Section ------------ */
 
@@ -68,7 +95,7 @@ h1 {
 
 .gallery {
     padding-left: 20px;
-    margin-right: 100px;
+    margin-right: 5%;
 }
 
 /* ------------ End of GALLERY Section ------------ */
@@ -82,6 +109,14 @@ h1 {
 .contact label {
     text-align: right;
 }
+
+.contact label.error {
+    padding: 5px;
+    text-align: left;
+    font-size: 13pt;
+}
+
+
 
 /* ------------ End of CONTACT Section ------------ */
 

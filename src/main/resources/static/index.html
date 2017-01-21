@@ -184,15 +184,17 @@
         <h1>Contact</h1>
         <div class="content contact">
             <p>For a quote or any queries please call us on 07860681642. Alternatively, fill in the form below with
-                your message and contact number, and one of our team will get in touch.</p>
+                your message and contact details, and one of our team will get in touch. <br /><br />
+                Please provide at least one contact method (phone or email) to ensure we can contact you.
+            </p>
 
             <form id="contact-us-form" action="/contact" method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <label>Contact Number: </label>
                     </div>
-                    <div class="col-md-4">
-                        <input type="number" name="phone-number"/>
+                    <div class="col-md-8">
+                        <input type="number" id="phone" name="phone"/>
                     </div>
                 </div>
 
@@ -202,8 +204,8 @@
                     <div class="col-md-4">
                         <label>Email address: </label>
                     </div>
-                    <div class="col-md-4">
-                        <input type="text" name="email"/>
+                    <div class="col-md-8">
+                        <input type="text" id="email" name="email"/>
                     </div>
                 </div>
 
@@ -213,14 +215,21 @@
                     <div class="col-md-4">
                         <label>Message: </label>
                     </div>
-                    <div class="col-md-4">
-                        <textarea name="message" rows="10" cols="53"></textarea>
+                    <div class="col-md-8">
+                        <textarea id="message" name="message" rows="6"></textarea>
                     </div>
                 </div>
 
                 <br />
-                <input type="submit" value="Submit">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+
             </form>
+
             <div id="result"></div>
 
         </div>
@@ -234,6 +243,7 @@
         crossorigin="anonymous"></script>
 <script src="/js/common.js"></script>
 <script src="/js/lightbox.js"></script>
+<script src="/js/form-validation/core.js"></script>
 <script src="/js/contact-us.js"></script>
 
 </body>
