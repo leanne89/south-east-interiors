@@ -10,10 +10,15 @@ body {
 }
 
 h1 {
-    margin: 4% 5% 4% 10%;
+    margin: 2% 5% 2% 10%;
     color: #35a380;
     font-size: 40pt;
     text-align: left;
+}
+
+h2 {
+    padding-left: 3%;
+    color: #35a380;
 }
 
 .content {
@@ -25,17 +30,29 @@ h1 {
     text-align: left;
 }
 
+.note {
+    font-size: 11pt;
+}
+
+form {
+    padding: 3% 0px 3% 3%;
+}
+
 input {
     width: 50%;
+}
+
+input[type="text"], input[type="number"], textarea {
+  background-color : #c5ece0;
+}
+
+textarea {
+    width: 100%;
 }
 
 input.error, textarea.error {
     font-size: 13pt;
     color: black;
-}
-
-textarea {
-    width: 100%;
 }
 
 .success {
@@ -50,7 +67,17 @@ textarea {
     font-size: 20pt;
 }
 
-#result {
+label.error {
+    padding: 5px;
+    text-align: left;
+    font-size: 13pt;
+}
+
+.toggle {
+    cursor:pointer;
+}
+
+#contact-result, #review-result, .service-images{
     display: none;
 }
 
@@ -100,25 +127,39 @@ textarea {
 
 /* ------------ End of GALLERY Section ------------ */
 
-/* ------------ Start of CONTACT Section ------------ */
+/* ------------ Start of SERVICES Section ------------ */
 
-.contact form {
-    padding: 40px 0px 40px 50px;
+.services .service-detail {
+    padding-left: 3%;
+    font-size: 11pt;
 }
 
-.contact label {
-    text-align: right;
-}
-
-.contact label.error {
-    padding: 5px;
-    text-align: left;
-    font-size: 13pt;
+.services .service-detail .service-images-container {
+    color: #35a380;
+    padding: 1% 0% 0% 3%;
 }
 
 
 
-/* ------------ End of CONTACT Section ------------ */
+/* ------------ End of SERVICES Section ------------ */
+
+/* ------------ Start of REVIEW Section ------------ */
+
+.review-author {
+    font-size: 10pt;
+    font-style: italic;
+    padding: 2px;
+}
+
+#review-form {
+    padding-top: 1px;
+}
+
+#review-form .row {
+    padding: 3px;
+}
+
+/* ------------ End of REVIEW Section ------------ */
 
 
 

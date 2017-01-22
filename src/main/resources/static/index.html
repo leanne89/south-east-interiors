@@ -12,7 +12,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/custom.css"/>
     <link rel="stylesheet" href="/css/lightbox.css"/>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Glegoo" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Glegoo"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +39,9 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#reviews">Reviews</a></li>
             </ul>
         </div>
     </div>
@@ -62,13 +64,10 @@
 
         <div class="content about">
             <p>Providing affordable and professional painting, decorating and plastering services in the South East. We
-                are
-                a Kent County Council Trading Standards Approved Company and a proud member of Checkatrade. At South
-                East
-                Interiors & Exteriors we are focused on providing a high-quality professional decorating service, aimed
-                at customer
-                satisfaction - we will do everything we can to meet your expectations. We offer a wide range of interior
-                and exterior services including:
+                are a Kent County Council Trading Standards Approved Company and a proud member of Checkatrade. At South
+                East Interiors & Exteriors we are focused on providing a high-quality professional decorating service,
+                aimed at customer satisfaction - we will do everything we can to meet your expectations. We offer a wide
+                range of interior and exterior services including:
             </p>
             <div class="row">
                 <div class="col-md-6">
@@ -179,48 +178,104 @@
     </div>
 </div>
 
+<div id="services" class="section">
+    <div class="starter-template">
+        <h1>Services</h1>
+        <div class="content services">
+            <div>See below for a list of services that we provide. All work is carried out to the highest standard and
+                all tradesman are fully qualified.
+            </div>
+
+            <hr>
+
+            <h2 class="toggle" data-toggle="plastering">> Plastering</h2>
+            <div id="plastering" class="service-detail">We provide a wide range of plastering services, such as
+                rendering, plasterboarding, stud wall
+                erection-timber and metal frame work, lime plastering, floor screeding, drylining and polished plaster
+                work.
+                <div class="toggle service-images-container" data-toggle="plastering-images">> Click to see examples of
+                    work undertaken by us
+                    <div id="plastering-images" class="service-images">
+                        Images go here
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 class="toggle" data-toggle="painting">> Painting/Decorating</h2>
+            <div id="painting" class="service-detail">We provide a wide range of painting & decorating services such as
+                painting, wallpapering, spraying,
+                wood staining and colour matching. All Interior and Exterior work undertaken.
+                <div class="toggle service-images-container" data-toggle="painting-images">> Click to see examples of
+                    work undertaken by us
+                    <div id="painting-images" class="service-images">
+                        Images go here
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 class="toggle" data-toggle="maintenance">> Property Maintenance</h2>
+            <div id="maintenance" class="service-detail">We also offer property maintenance services such as guttering
+                replacement, tiling, sink changes, work
+                top replacements, restaining of worktops, fencing, felt roofing, small leaks, rendering, brick walls,
+                pointing, small carpentry works and many more.
+                <div class="toggle service-images-container" data-toggle="maintenance-images">> Click to see examples of
+                    work undertaken by us
+                    <div id="maintenance-images" class="service-images">
+                        Images go here
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+        </div>
+    </div>
+</div>
+
 <div id="contact" class="section">
     <div class="starter-template">
         <h1>Contact</h1>
         <div class="content contact">
             <p>For a quote or any queries please call us on 07860681642. Alternatively, fill in the form below with
-                your message and contact details, and one of our team will get in touch. <br /><br />
-                Please provide at least one contact method (phone or email) to ensure we can contact you.
+                your message and contact details, and one of our team will get in touch. <br/>
             </p>
 
             <form id="contact-us-form" action="/contact" method="post">
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Contact Number: </label>
+                        <label>Contact Number: **</label>
                     </div>
                     <div class="col-md-8">
                         <input type="number" id="phone" name="phone"/>
                     </div>
                 </div>
 
-                <br />
+                <br/>
 
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Email address: </label>
+                        <label>Email address: **</label>
                     </div>
                     <div class="col-md-8">
                         <input type="text" id="email" name="email"/>
                     </div>
                 </div>
 
-                <br />
+                <br/>
 
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Message: </label>
+                        <label>Message: *</label>
                     </div>
                     <div class="col-md-8">
                         <textarea id="message" name="message" rows="6"></textarea>
                     </div>
                 </div>
 
-                <br />
+                <br/>
 
                 <div class="row">
                     <div class="col-md-4">
@@ -228,9 +283,87 @@
                     </div>
                 </div>
 
+                <br/>
+                <p class="note">* Required field</p>
+                <p class="note">** Please provide at least one contact method (phone or email) to ensure we can contact
+                    you.</p>
+
             </form>
 
-            <div id="result"></div>
+            <div id="contact-result"></div>
+
+        </div>
+    </div>
+</div>
+
+<div id="reviews" class="section">
+    <div class="starter-template">
+        <h1>Reviews</h1>
+        <div class="content">
+
+            <div>"Fanstastic job skimming artexed ceilings and then decorating them after. Quick, Professional and very
+                pleasant, highly recommended."
+            </div>
+            <div class="review-author">Jon beddard, Ashford kent.</div>
+            <br/>
+            <div>"Very good job, very clean and friendly. Will use again in the future."</div>
+            <div class="review-author">Sarah eastwood, Bickley kent.</div>
+            <br/>
+            <div>"Hard working, trustworthy, quick and clean job. Very pleased with result. Thanks ross :)"</div>
+            <div class="review-author">Maria hales, Ashford kent.</div>
+            <br/>
+
+            <h2 class="submit-review">Submit a testimonial</h2>
+
+            <form id="review-form" action="/review" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Name: *</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="name" name="name"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Town: *</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="town" name="town"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>County: *</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="county" name="county"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Testimonial: *</label>
+                    </div>
+                    <div class="col-md-8">
+                        <textarea id="testimonial" name="testimonial" rows="2"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="submit" value="Submit">
+                    </div>
+                </div>
+
+                <br/>
+                <p class="note">* Required field</p>
+
+            </form>
+
+            <div id="review-result"></div>
 
         </div>
     </div>
@@ -245,6 +378,7 @@
 <script src="/js/lightbox.js"></script>
 <script src="/js/form-validation/core.js"></script>
 <script src="/js/contact-us.js"></script>
+<script src="/js/review-us.js"></script>
 
 </body>
 </html>

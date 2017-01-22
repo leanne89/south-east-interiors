@@ -1,4 +1,4 @@
-package main.java.hello;
+package main.java.content;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,7 +15,7 @@ public class ContactController {
         model.addAttribute("email", message.getEmailAddress());
         model.addAttribute("message", message.getMessage());
 
-        return "result";
+        return "contact-result";
     }
 }
 

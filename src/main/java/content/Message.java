@@ -1,4 +1,4 @@
-package main.java.hello;
+package main.java.content;
 
 public class Message
 {

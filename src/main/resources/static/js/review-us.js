@@ -1,19 +1,9 @@
-$("#contact-us-form").validate({
+$("#review-form").validate({
     rules: {
-        email: {
-            required: {
-                depends: function(element) {
-                    return !$("#phone").val();
-                }
-            },
-            email: true
-        },
-        message: "required"
-    },
-    messages: {
-        email: {
-          required: "Please provide either a phone number or email address to be contacted on.",
-        }
+        name: "required",
+        town: "required",
+        county: "required",
+        testimonial: "required"
     },
     submitHandler: function(form)
     {
@@ -21,9 +11,9 @@ $("#contact-us-form").validate({
         event.preventDefault();
 
         // Get some values from elements on the page:
-        var form = $( "#contact-us-form" );
+        var form = $( "#review-form" );
         var url = form.attr( "action" );
-        var result = $("#contact-result");
+        var result = $("#review-result");
 
         // Send the data using post
         var posting = $.post
@@ -41,7 +31,7 @@ $("#contact-us-form").validate({
 
         posting.fail(function( data )
         {
-            errorContent = "<div class=\"error\" >Currently unable to send query. Please call 07860681642</div>";
+            errorContent = "<div class=\"error\" >Currently unable to send review. Please try again later</div>";
             form.slideToggle(1000);
             result.append( errorContent ).slideToggle(1000);
         });
