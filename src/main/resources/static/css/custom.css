@@ -129,8 +129,13 @@ label.error {
 
 /* ------------ Start of SERVICES Section ------------ */
 
-.services .service-detail {
+.services .service-detail{
     padding-left: 3%;
+    font-size: 11pt;
+}
+
+.services .service-detail h3 {
+    margin-top: 0px;
     font-size: 11pt;
 }
 
@@ -139,6 +144,9 @@ label.error {
     padding: 1% 0% 0% 3%;
 }
 
+.services .service-detail .service-images-container .service-images .row {
+    padding-top: 2%;
+}
 
 
 /* ------------ End of SERVICES Section ------------ */
