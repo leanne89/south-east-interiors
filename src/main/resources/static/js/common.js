@@ -18,6 +18,45 @@ $(function() {
             }, 1000);
         }
     });
+
+    // get the value of the top of each section
+    var about = $('#about').offset().top - 1;
+    var gallery = $('#gallery').offset().top - 1;
+    var services = $('#services').offset().top - 1;
+    var contact = $('#contact').offset().top - 1;
+    var reviews = $('#reviews').offset().top - 1;
+
+    // on scroll,
+    $(window).on('scroll',function(){
+
+        // we round here to reduce a little workload
+        var stop = Math.round($(window).scrollTop());
+
+        if (stop > reviews) {
+            $("#navbar li.active").removeClass("active");
+            $("#navbar li#nav-reviews").addClass("active");
+        }
+        else if (stop >= contact) {
+            $("#navbar li.active").removeClass("active");
+            $("#navbar li#nav-contact").addClass("active");
+        }
+        else if (stop >= services) {
+           $("#navbar li.active").removeClass("active");
+           $("#navbar li#nav-services").addClass("active");
+        }
+        else if (stop >= gallery) {
+          $("#navbar li.active").removeClass("active");
+          $("#navbar li#nav-gallery").addClass("active");
+        }
+        else if (stop >= about) {
+            $("#navbar li.active").removeClass("active");
+            $("#navbar li#nav-about").addClass("active");
+        }
+        else {
+            $("#navbar li.active").removeClass("active");
+            $("#navbar li#nav-home").addClass("active");
+        }
+    });
 });
 
 $(function(){
