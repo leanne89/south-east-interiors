@@ -20,11 +20,11 @@ $(function() {
     });
 
     // get the value of the top of each section
-    var about = $('#about').offset().top - 1;
-    var gallery = $('#gallery').offset().top - 1;
-    var services = $('#services').offset().top - 1;
-    var contact = $('#contact').offset().top - 1;
-    var reviews = $('#reviews').offset().top - 1;
+    var about = $('#about').offset().top - 101;
+    var gallery = $('#gallery').offset().top - 101;
+    var services = $('#services').offset().top - 101;
+    var contact = $('#contact').offset().top - 101;
+    var reviews = $('#reviews').offset().top - 101;
 
     // on scroll,
     $(window).on('scroll',function(){

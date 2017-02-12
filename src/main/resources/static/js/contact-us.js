@@ -8,6 +8,7 @@ $("#contact-us-form").validate({
             },
             email: true
         },
+        subject: "required",
         message: "required"
     },
     messages: {
@@ -24,6 +25,9 @@ $("#contact-us-form").validate({
         var form = $( "#contact-us-form" );
         var url = form.attr( "action" );
         var result = $("#contact-result");
+        var submit = $("#submit");
+
+        submit.attr("disabled", true);
 
         // Send the data using post
         var posting = $.post
