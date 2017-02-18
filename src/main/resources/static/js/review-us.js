@@ -14,6 +14,11 @@ $("#review-form").validate({
         var form = $( "#review-form" );
         var url = form.attr( "action" );
         var result = $("#review-result");
+        var submit = $("input[type=submit]",form);
+        var loader = $("#review-loader");
+
+        submit.attr("disabled", true);
+        loader.show();
 
         // Send the data using post
         var posting = $.post
@@ -27,6 +32,7 @@ $("#review-form").validate({
         {
             form.slideToggle(1000);
             result.append( $(data) ).slideToggle(1000);
+            loader.hide();
         });
 
         posting.fail(function( data )
@@ -34,6 +40,7 @@ $("#review-form").validate({
             errorContent = "<div class=\"error\" >Currently unable to send review. Please try again later</div>";
             form.slideToggle(1000);
             result.append( errorContent ).slideToggle(1000);
+            loader.hide();
         });
      }
 });

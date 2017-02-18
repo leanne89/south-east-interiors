@@ -1,6 +1,6 @@
 package content;
 
-public class Enquiry
+public class Enquiry extends Form
 {
     private String phone;
 

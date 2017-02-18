@@ -25,9 +25,11 @@ $("#contact-us-form").validate({
         var form = $( "#contact-us-form" );
         var url = form.attr( "action" );
         var result = $("#contact-result");
-        var submit = $("#submit");
+        var submit = $("input[type=submit]",form);
+        var loader = $("#contact-loader");
 
         submit.attr("disabled", true);
+        loader.show();
 
         // Send the data using post
         var posting = $.post
@@ -41,6 +43,7 @@ $("#contact-us-form").validate({
         {
             form.slideToggle(1000);
             result.append( $(data) ).slideToggle(1000);
+            loader.hide();
         });
 
         posting.fail(function( data )
@@ -48,6 +51,7 @@ $("#contact-us-form").validate({
             errorContent = "<div class=\"error\" >Currently unable to send query. Please call 07860681642</div>";
             form.slideToggle(1000);
             result.append( errorContent ).slideToggle(1000);
+            loader.hide();
         });
      }
 });

@@ -23,8 +23,8 @@ h1 {
 }
 
 h2 {
-    padding-left: 3%;
     color: #35a380;
+    padding-bottom: 10px;
 }
 
 .content {
@@ -83,7 +83,7 @@ label.error {
     cursor:pointer;
 }
 
-#contact-result, #review-result, .service-images{
+#contact-result, #review-result, .service-images, #contact-loader, #review-loader{
     display: none;
 }
 
@@ -135,11 +135,14 @@ label.error {
 
 /* ------------ Start of SERVICES Section ------------ */
 
-.services .service-detail{
+.services .service-detail {
     padding-left: 3%;
     font-size: 11pt;
 }
 
+.services h2 {
+    padding-left: 3%;
+}
 .services .service-detail h3 {
     margin-top: 0px;
     font-size: 11pt;

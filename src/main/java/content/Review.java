@@ -1,6 +1,6 @@
 package content;
 
-public class Review
+public class Review extends Form
 {
     private String name;
 

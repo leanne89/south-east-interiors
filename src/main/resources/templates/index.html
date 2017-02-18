@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Decorating in Ashford, Kent-South east interiors & exteriors</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Decorating in Ashford, Kent-South east interiors and exteriors</title>
 
-    <!-- Bootstrap -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/custom.css"/>
     <link rel="stylesheet" href="/css/lightbox.css"/>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Glegoo"/>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 <body>
 
@@ -52,8 +46,8 @@
         <div class="homepage-text">
             <h1>South East Interiors <br/>and Exteriors</h1>
             <div class="homepage-content">
-                <p>Painting, Decorating & Plastering services in
-                    <br> South East Kent & East Sussex.</p>
+                <p>Painting, Decorating and Plastering services in
+                    <br/> South East Kent and East Sussex.</p>
             </div>
         </div>
     </div>
@@ -66,7 +60,7 @@
             <div class="content about">
                 <p>Providing affordable and professional painting, decorating and plastering services in the South East. We
                     are a Kent County Council Trading Standards Approved Company and a proud member of Checkatrade. At South
-                    East Interiors & Exteriors we are focused on providing a high-quality professional decorating service,
+                    East Interiors and Exteriors we are focused on providing a high-quality professional decorating service,
                     aimed at customer satisfaction - we will do everything we can to meet your expectations. We offer a wide
                     range of interior and exterior services including:
                 </p>
@@ -163,7 +157,7 @@
                     all tradesman are fully qualified.
                 </div>
 
-                <hr>
+                <hr/>
 
                 <h2 class="toggle" data-toggle="plastering">> Plastering</h2>
                 <div id="plastering" class="service-detail">We provide a wide range of plastering services, such as
@@ -201,10 +195,10 @@
                     </div>
                 </div>
 
-                <hr>
+                <hr/>
 
                 <h2 class="toggle" data-toggle="painting">> Painting/Decorating</h2>
-                <div id="painting" class="service-detail">We provide a wide range of painting & decorating services such as
+                <div id="painting" class="service-detail">We provide a wide range of painting and decorating services such as
                     painting, wallpapering, spraying,
                     wood staining and colour matching. All Interior and Exterior work undertaken.
                     <div class="service-images-container">
@@ -240,7 +234,7 @@
                     </div>
                 </div>
 
-                <hr>
+                <hr/>
 
                 <h2 class="toggle" data-toggle="maintenance">> Property Maintenance</h2>
                 <div id="maintenance" class="service-detail">We also offer property maintenance services such as guttering
@@ -279,7 +273,7 @@
                     </div>
                 </div>
 
-                <hr>
+                <hr/>
             </div>
         </div>
     </div>
@@ -293,6 +287,8 @@
                 </p>
 
                 <form id="contact-us-form" action="/contact" method="post">
+                    <input type="hidden" name="token" th:value="${session.contactToken}"/>
+
                     <div class="row">
                         <div class="col-md-4">
                             <label>Contact Number: **</label>
@@ -339,7 +335,8 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                            <input id="submit" type="submit" value="Submit">
+                            <input id="submit" type="submit" value="Submit"/>
+                            <label><img id="contact-loader" src="images/loading.gif"/></label>
                         </div>
                     </div>
 
@@ -373,9 +370,12 @@
                 <div class="review-author">Maria hales, Ashford kent.</div>
                 <br/>
 
-                <h2 class="submit-review">Submit a testimonial</h2>
-
                 <form id="review-form" action="/review" method="post">
+
+                    <input type="hidden" name="token" th:value="${session.reviewToken}"/>
+
+                    <h2 class="submit-review">Submit a testimonial</h2>
+
                     <div class="row">
                         <div class="col-md-4">
                             <label>Name: *</label>
@@ -414,7 +414,8 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit"/>
+                            <label><img id="review-loader" src="images/loading.gif"/></label>
                         </div>
                     </div>
 
@@ -434,7 +435,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                South East Interiors & Exteriors
+                South East Interiors and Exteriors
             </div>
             <div class="col-md-6">
                 26 Oxen Lease, Singleton, TN23 4YT, Ashford, Kent, United Kingdom

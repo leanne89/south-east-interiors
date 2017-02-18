@@ -7,20 +7,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
-public class ReviewController {
+public class ReviewController extends FormController{
 
     @Autowired
     private ApplicationMailer mailer;
 
     @RequestMapping(value = "/review", method = RequestMethod.POST)
-    public String submitMessage(@ModelAttribute("SpringWeb")Review review, ModelMap model) {
+    public String submitMessage(HttpSession session, @ModelAttribute("SpringWeb")Review review, ModelMap model) {
         model.addAttribute("name", review.getName());
         model.addAttribute("town", review.getTown());
         model.addAttribute("county", review.getCounty());
         model.addAttribute("testimonial", review.getTestimonial());
 
-        String errorTemplate = validateReview(review);
+        String errorTemplate = validateReview(review, session);
 
         if( errorTemplate != null)
         {
@@ -43,8 +45,15 @@ public class ReviewController {
         return "review-result";
     }
 
-    private String validateReview(Review review)
+    private String validateReview(Review review, HttpSession session)
     {
+        String invalidTokenTemplate = validateToken(session, "reviewToken", review.getToken());
+
+        if(invalidTokenTemplate != null)
+        {
+            return invalidTokenTemplate;
+        }
+
         if( review.getName().isEmpty()
             || review.getTown().isEmpty()
             || review.getCounty().isEmpty()

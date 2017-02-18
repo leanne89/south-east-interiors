@@ -10,21 +10,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import javax.servlet.http.HttpSession;
 
 @Controller
-public class ContactController {
+public class ContactController extends FormController{
 
     @Autowired
     private ApplicationMailer mailer;
 
     @RequestMapping(value = "/contact", method = RequestMethod.POST)
-    public String submitMessage(@ModelAttribute("SpringWeb") Enquiry enquiry, ModelMap model) {
+    public String submitMessage(HttpSession session, @ModelAttribute("SpringWeb") Enquiry enquiry, ModelMap model) {
         model.addAttribute("phone", enquiry.getPhone());
         model.addAttribute("email", enquiry.getEmail());
         model.addAttribute("subject", enquiry.getSubject());
         model.addAttribute("message", enquiry.getMessage());
 
-        String errorTemplate = validateEnquiry(enquiry);
+        String errorTemplate = validateEnquiry(enquiry, session);
 
         if( errorTemplate != null)
         {
@@ -47,8 +48,15 @@ public class ContactController {
         return "contact-result";
     }
 
-    private String validateEnquiry(Enquiry enquiry)
+    private String validateEnquiry(Enquiry enquiry, HttpSession session)
     {
+        String invalidTokenTemplate = validateToken(session, "contactToken", enquiry.getToken());
+
+        if(invalidTokenTemplate != null)
+        {
+            return invalidTokenTemplate;
+        }
+
         if( enquiry.getPhone().isEmpty() && enquiry.getEmail().isEmpty() )
         {
             return "contact-error-no-contact-method";
