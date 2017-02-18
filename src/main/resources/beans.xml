@@ -13,10 +13,10 @@
 
     <!-- SET default mail properties -->
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="host" value="smtp.gmail.com"/>
-        <property name="port" value="25"/>
-        <property name="username" value="southeastinteriorsandexteriors@gmail.com"/>
-        <property name="password" value="welcome01"/>
+        <property name="host" value="${spring.mail.host}"/>
+        <property name="port" value="${spring.mail.port}"/>
+        <property name="username" value="${spring.mail.username}"/>
+        <property name="password" value="${spring.mail.password}"/>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
@@ -28,14 +28,14 @@
     </bean>
 
     <bean id="enquiryMessage" class="org.springframework.mail.SimpleMailMessage" autowire="byName">
-        <property name="to" value="leanne_88@hotmail.com"></property>
-        <property name="from" value="southeastinteriorsandexteriors@gmail.com"></property>
+        <property name="to" value="${message.to.address}"></property>
+        <property name="from" value="${message.from.address}"></property>
         <property name="subject" value="New Enquiry"/>
     </bean>
 
     <bean id="reviewMessage" class="org.springframework.mail.SimpleMailMessage" autowire="byName">
-        <property name="to" value="leanne_88@hotmail.com"></property>
-        <property name="from" value="southeastinteriorsandexteriors@gmail.com"></property>
+        <property name="to" value="${message.to.address}"></property>
+        <property name="from" value="${message.from.address}"></property>
         <property name="subject" value="New Review!"/>
     </bean>
 
